@@ -24,12 +24,6 @@ An ASP.NET MVC web application that displays real-time current weather and a 5-d
 
 ---
 
-## 📷 Screenshots
-
-> _(Add screenshots of the home page and forecast section here, if available)_
-
----
-
 ## 🧪 How to Run Locally
 
 1. Clone the repository:
