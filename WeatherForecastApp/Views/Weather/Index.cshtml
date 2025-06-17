@@ -1,0 +1,42 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+@model WeatherForecastApp.Models.WeatherViewModel
+@{
+    ViewBag.Title = "Weather Forecast";
+}
+
+<h2>Weather Forecast</h2>
+
+@using (Html.BeginForm("Index", "Weather", FormMethod.Post))
+{
+    <input type="text" name="city" placeholder="Enter city name" required />
+    <button type="submit">Get Weather</button>
+}
+
+@if (Model != null && !string.IsNullOrEmpty(Model.City))
+{
+    <div style="margin-top:20px;">
+        <h3>@Model.City</h3>
+        <p>@Model.Description</p>
+        <p>Temperature: @Model.Temperature°C</p>
+    </div>
+}
+@if (ViewBag.Forecast != null)
+{
+    <h3>5-Day Forecast</h3>
+    <div style="display: flex; gap: 10px;">
+        @foreach (var item in ViewBag.Forecast)
+        {
+            <div style="border: 1px solid gray; padding: 10px; text-align: center;">
+                <p><strong>@item.Date</strong></p>
+                <p>@item.Temperature °C</p>
+                <p>@item.Description</p>
+            </div>
+        }
+    </div>
+}
+
+
